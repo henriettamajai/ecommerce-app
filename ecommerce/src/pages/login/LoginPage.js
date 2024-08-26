@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './LoginPage.module.css';
+import Button from '../../components/button/Button';
 
 const LoginPage = () => {
     const navigate = useNavigate();
@@ -25,9 +26,7 @@ const LoginPage = () => {
               placeholder="Password"
               className={styles.input}
             />
-            <button type="submit" className={styles.button}>
-              Log In
-            </button>
+            <Button size="medium">Login</Button>
           </form>
         </div>
       </div>
