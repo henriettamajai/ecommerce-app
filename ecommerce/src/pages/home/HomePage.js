@@ -1,10 +1,12 @@
 import React from 'react';
+import Navbar from '../../components/navbar/Navbar';
 import Button from '../../components/button/Button';
 import Card from '../../components/categoryCard/CategoryCard';
 import styles from './HomePage.module.css';
 
 const HomePage = () => {
     return (
+      <div><Navbar />
       <div className={styles.container}>
         <div className={styles.content}>
           <div className={styles['text-container']}>
@@ -30,6 +32,7 @@ const HomePage = () => {
             backgroundImage="/headsetCategory.png" 
           />
         </div>
+      </div>
       </div>
     );
   };
