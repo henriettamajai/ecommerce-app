@@ -1,15 +1,17 @@
-import './styles/global.css';
-import Button from './components/Button';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import Navbar from './components/navbar/Navbar';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <Button size="small" variant="filled" state="default">Small Filled Button</Button>
-        <Button size="medium" variant="outline" state="hover">Medium Outline Button</Button>
-        <Button size="large" variant="ghost" state="active">Large Ghost Button</Button>
-      </header>
-    </div>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+      </Routes>
+    </Router>
   );
-}
+};
+
 export default App;
