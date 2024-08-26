@@ -1,4 +1,3 @@
-// src/components/Button.js
 import React from 'react';
 import styles from './Button.module.css';
 
@@ -7,7 +6,7 @@ const Button = ({
   variant = 'filled', 
   state = 'default', 
   children, 
-  onClick 
+  onClick,
 }) => {
   const className = `
     ${styles.button} 

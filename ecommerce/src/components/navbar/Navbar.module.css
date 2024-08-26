@@ -1,9 +1,8 @@
-/* src/components/Navbar.module.css */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 14px 80px;
+    padding: 14px 112px;
     background-color: var(--white);
     color: var(--white);
   }

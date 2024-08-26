@@ -1,0 +1,29 @@
+.card {
+    flex: 1 1 calc(33.33% - 32px);
+    height: 360px; 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: flex-end;
+    padding: 32px 0px;
+    border-radius: 50px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: var(--black);
+  }
+  
+  .title {
+    font-size: 34px;
+    padding-left: 26px ;
+    font-weight: 500;
+    margin: 0px;
+    color: var(--black)
+  }
+  
