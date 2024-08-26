@@ -5,6 +5,7 @@
     padding: 14px 112px;
     background-color: var(--white);
     color: var(--white);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
   
   .logo img {

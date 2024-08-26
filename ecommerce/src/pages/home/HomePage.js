@@ -1,6 +1,6 @@
 import React from 'react';
-import Button from '../components/button/Button';
-import Card from '../components/categoryCard/CategoryCard';
+import Button from '../../components/button/Button';
+import Card from '../../components/categoryCard/CategoryCard';
 import styles from './HomePage.module.css';
 
 const HomePage = () => {
@@ -12,7 +12,7 @@ const HomePage = () => {
           <p className={styles.paragraph}>
             Here is a short paragraph describing what we do and inviting users to get started with our services.
           </p>
-          <Button size="large" variant="filled">Get Started</Button>
+          <Button size="medium">Get Started</Button>
           </div>
         </div>
   
