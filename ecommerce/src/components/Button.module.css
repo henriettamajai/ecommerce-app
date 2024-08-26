@@ -1,0 +1,68 @@
+/* src/components/Button.module.css */
+
+.button {
+    border: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    border-radius: 40px;
+    cursor: pointer;
+    padding: 8px 26px;
+    font-size: 1rem;
+  }
+  .extra-small {
+    font-size: 14px;
+    padding: 8px 20px;
+  }
+  .small {
+    font-size: 16px;
+    padding: 8px 24px;
+  }
+  
+  .medium {
+    font-size: 18px;
+    padding: 8px 26px;
+  }
+  
+  .large {
+    font-size: 1.25rem;
+    padding: 12px 24px;
+  }
+
+  .filled {
+    background-color: var(--primary-500);
+    color: white;
+    border: none;
+  }
+  .filled:hover {
+    background-color: var(--primary-600);
+  }
+  .filled:active {
+    background-color: var(--primary-700);
+  }
+  
+  .outline {
+    background-color: var(--white);
+    color: var(--primary-500);
+    border: 2px solid var(--primary-500);
+  }
+  .outline:hover {
+    background-color: var(--primary-100);
+  }
+  .outline:active {
+    color: var(--white);
+    background-color: var(--primary-200);
+    border-color: var(--primary-200);
+  }
+
+  .ghost {
+    background-color: transparent;
+    color: var(--primary-500);
+    border: none;
+  }
+  .ghost:hover {
+        background-color: var(--primary-100);
+  }
+  .ghost:active {
+    background-color: var(--primary-200);
+  }
+  
