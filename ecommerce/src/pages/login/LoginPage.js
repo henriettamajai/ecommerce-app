@@ -15,6 +15,7 @@ const LoginPage = () => {
         
         <div className={styles.formWrapper}>
           <h2 className={styles.title}>Login</h2>
+          <p className={styles.subtitle}>Please enter your credentials to access your account.</p>
           <form className={styles.form}>
             <input
               type="email"

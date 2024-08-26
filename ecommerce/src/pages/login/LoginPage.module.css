@@ -26,8 +26,18 @@
   
   .title {
     font-size: 32px;
-    margin-bottom: 24px;
+    font-weight: 600;
+    margin-bottom: 12px;
     color: var(--black);
+    text-align: left;
+  }
+
+  .subtitle {
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 32px;
+    color: var(--netutral-600);
+    text-align: left;
   }
   
   .form {
