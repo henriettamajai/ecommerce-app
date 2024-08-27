@@ -3,6 +3,7 @@ import Navbar from '../../components/navbar/Navbar';
 import Button from '../../components/button/Button';
 import Card from '../../components/categoryCard/CategoryCard';
 import styles from './HomePage.module.css';
+import Footer from '../../components/footer/Footer';
 
 const HomePage = () => {
     return (
@@ -33,6 +34,7 @@ const HomePage = () => {
           />
         </div>
       </div>
+      <Footer />
       </div>
     );
   };
