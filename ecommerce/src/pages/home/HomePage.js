@@ -14,7 +14,7 @@ const HomePage = () => {
           <p className={styles.paragraph}>
             Here is a short paragraph describing what we do and inviting users to get started with our services.
           </p>
-          <Button size="medium">Get Started</Button>
+          <Button variant='filled' size="medium">Get Started</Button>
           </div>
         </div>
   

@@ -7,7 +7,7 @@ const CategoryCard = ({ title, backgroundImage }) => {
     <div className={styles.card} style={{ backgroundImage: `url(${backgroundImage})` }}>
       <div className={styles.content}>
         <h2 className={styles.title}>{title}</h2>
-        <Button variant="ghost" size="medium">Shop Now</Button>
+        <Button variant="link" size="medium">Shop Now</Button>
       </div>
     </div>
   );

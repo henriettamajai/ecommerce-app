@@ -27,7 +27,7 @@
   }
 
   .filled {
-    background-color: var(--primary-500) !important;
+    background-color: var(--primary-500);
     color: white;
     border: none;
   }
