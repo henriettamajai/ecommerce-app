@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './LoginPage.module.css';
-import Button from '../../components/button/Button';
+import LoginForm from '../../components/loginForm/LoginForm';
 
 const LoginPage = () => {
     const navigate = useNavigate();
@@ -16,19 +16,7 @@ const LoginPage = () => {
         <div className={styles.formWrapper}>
           <h2 className={styles.title}>Login</h2>
           <p className={styles.subtitle}>Please enter your credentials to access your account.</p>
-          <form className={styles.form}>
-            <input
-              type="email"
-              placeholder="Email"
-              className={styles.input}
-            />
-            <input
-              type="password"
-              placeholder="Password"
-              className={styles.input}
-            />
-            <Button size="medium">Login</Button>
-          </form>
+          <LoginForm />
         </div>
       </div>
       <div className={styles.rightContainer}>
