@@ -63,4 +63,18 @@
   .ghost:active {
     background-color: var(--primary-200);
   }
+
+  .link {
+    background-color: transparent;
+    color: var(--neutral-900);
+    border: none;
+  }
+  .link:hover {
+    background-color: transparent;
+    color: var(--primary-500);
+  }
+  .link:active {
+    background-color: transparent;
+    color: var(--primary-600);
+  }
   

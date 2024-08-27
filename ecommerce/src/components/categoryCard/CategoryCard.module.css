@@ -1,6 +1,6 @@
 .card {
     flex: 1 1 calc(33.33% - 32px);
-    height: 360px; 
+    height: 320px; 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
