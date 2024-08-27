@@ -19,9 +19,11 @@
   }
   
   .input {
+    font-family: 'Poppins', sans-serif;
     border: 1px solid var(--neutral-300);
+    color: var(--neutral-500);
     border-radius: 40px;
-    padding: 12px;
+    padding: 10px 14px;
     font-size: 16px;
     width: 100%;
     margin: 0px;
@@ -33,9 +35,11 @@
   }
   
   .inputFullWidth {
+    font-family: 'Poppins', sans-serif;
+    color: var(--neutral-500);
     border: 1px solid var(--neutral-300);
     border-radius: 40px;
-    padding: 12px;
+    padding: 10px 14px;
     font-size: 16px;
     width: 100%;
     max-width: 360px;
@@ -56,8 +60,36 @@
     text-align: left;
 }
 
-.buttonFullWidth {
-  width: 100%;
-  box-sizing: border-box;
+  .buttonFullWidth {
+    width: 100%;
+    box-sizing: border-box;
+    font-weight: 500 !important;
+}
+
+  .googleIcon {
+    background-color: white; 
+    font-family: 'Poppins', sans-serif;
+    border: 1px solid var(--neutral-300);
+    color: var(--neutral-700);
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 26px;
+    font-size: 18px;
+    font-weight: 500;
+    gap: 8px;
+}
+
+.googleIcon:hover {
+    background-color: var(--neutral-100);
+}
+
+.loginLink{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px; 
+  font-size: 14px;
 }
   

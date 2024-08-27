@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Button from '../button/Button';
 import styles from './SignUpForm.module.css';
 
@@ -19,6 +20,11 @@ const SignUpForm = () => {
         }));
     };
 
+    const navigate = useNavigate();
+    const handleLoginClick = () => {
+        navigate('/login'); 
+    };
+
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log('Form data submitted:', formData);
@@ -28,24 +34,24 @@ const SignUpForm = () => {
         <form className={styles.form} onSubmit={handleSubmit}>
             <div className={styles.row}>
                 <div className={styles.inputWrapper}>
-                    <label htmlFor="firstName" className={styles.label}>First Name</label>
+                    <label htmlFor="firstName" className={styles.label}>First name*</label>
                     <input
                         id="firstName"
                         type="text"
                         name="firstName"
-                        placeholder="First Name"
+                        placeholder="Enter first name"
                         className={styles.input}
                         value={formData.firstName}
                         onChange={handleInputChange}
                     />
                 </div>
                 <div className={styles.inputWrapper}>
-                    <label htmlFor="lastName" className={styles.label}>Last Name</label>
+                    <label htmlFor="lastName" className={styles.label}>Last name*</label>
                     <input
                         id="lastName"
                         type="text"
                         name="lastName"
-                        placeholder="Last Name"
+                        placeholder="Enter last name"
                         className={styles.input}
                         value={formData.lastName}
                         onChange={handleInputChange}
@@ -53,36 +59,36 @@ const SignUpForm = () => {
                 </div>
             </div>
             <div className={styles.inputWrapper}>
-                <label htmlFor="email" className={styles.label}>Email</label>
+                <label htmlFor="email" className={styles.label}>Email*</label>
                 <input
                     id="email"
                     type="email"
                     name="email"
-                    placeholder="Email"
+                    placeholder="Enter your email"
                     className={styles.inputFullWidth}
                     value={formData.email}
                     onChange={handleInputChange}
                 />
             </div>
             <div className={styles.inputWrapper}>
-                <label htmlFor="password" className={styles.label}>Password</label>
+                <label htmlFor="password" className={styles.label}>Password*</label>
                 <input
                     id="password"
                     type="password"
                     name="password"
-                    placeholder="Password"
+                    placeholder="Create password"
                     className={styles.inputFullWidth}
                     value={formData.password}
                     onChange={handleInputChange}
                 />
             </div>
             <div className={styles.inputWrapper}>
-                <label htmlFor="confirmPassword" className={styles.label}>Confirm Password</label>
+                <label htmlFor="confirmPassword" className={styles.label}>Confirm password*</label>
                 <input
                     id="confirmPassword"
                     type="password"
                     name="confirmPassword"
-                    placeholder="Confirm Password"
+                    placeholder="Enter password again"
                     className={styles.inputFullWidth}
                     value={formData.confirmPassword}
                     onChange={handleInputChange}
@@ -91,6 +97,14 @@ const SignUpForm = () => {
             <Button size="medium" variant="filled" type="submit" className={styles.buttonFullWidth}>
                 Sign Up
             </Button>
+            <button type="button" className={`${styles.googleIcon} ${styles.buttonFullWidth}`}>
+                <img src="/googleIcon.svg" alt="Google Icon" className={styles.googleButton}/>
+                <span>Sign Up with Google</span>
+            </button>
+            <div className={styles.loginLink}>
+                <span>Already have an account?</span>
+                <Button size='extraSmall'variant='link' state='active' onClick={handleLoginClick}>Log In</Button>
+            </div>
         </form>
     );
 };

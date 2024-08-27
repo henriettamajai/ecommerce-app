@@ -5,7 +5,7 @@
     border-radius: 40px;
     cursor: pointer;
     padding: 8px 26px;
-    font-size: 1rem;
+    font-size: 16px;
   }
   .extra-small {
     font-size: 14px;
@@ -18,7 +18,7 @@
   
   .medium {
     font-size: 18px;
-    padding: 8px 26px;
+    padding: 10px 26px;
   }
   
   .large {
@@ -68,6 +68,7 @@
     background-color: transparent;
     color: var(--neutral-900);
     border: none;
+    padding: 0px;
   }
   .link:hover {
     background-color: transparent;
