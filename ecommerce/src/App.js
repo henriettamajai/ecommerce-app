@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/home/HomePage';
-import Navbar from './components/navbar/Navbar';
 import LoginPage from './pages/login/LoginPage';
+import SignUpPage from './pages/signup/SignUpPage'
 import './styles/global.css';
 
 const App = () => {
@@ -11,6 +11,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/signup" element={<SignUpPage/>}/>
       </Routes>
     </Router>
   );
