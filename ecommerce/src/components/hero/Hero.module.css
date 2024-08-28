@@ -1,0 +1,39 @@
+.hero {
+    background-image: url('/public/hero-bg.jpg'); 
+    background-size: cover;
+    background-position: center;
+    border-radius: 60px;
+    color: var(--white);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    max-width: 1216px;
+    height: 360px;
+    width: 100%;
+    margin: auto;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    margin-top: 64px;
+    margin-bottom: 64px; 
+  }
+  
+  .heroContent {
+    position: relative;
+    z-index: 1;
+    max-width: 600px;
+    margin: auto;
+  }
+  
+  .heroTitle {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 16px;
+  }
+  
+  .heroSubtitle {
+    font-size: 20px;
+    margin-top: 0px;
+    margin-bottom: 32px;
+  }
+  

@@ -27,12 +27,12 @@
   }
 
   .filled {
-    background-color: var(--primary-500);
+    background: linear-gradient(to right,var(--primary-500), var(--secondary-500));
     color: white;
     border: none;
   }
   .filled:hover {
-    background-color: var(--primary-600);
+    background: linear-gradient(to right,var(--primary-600), var(--secondary-600));
   }
   .filled:active {
     background-color: var(--primary-700);
