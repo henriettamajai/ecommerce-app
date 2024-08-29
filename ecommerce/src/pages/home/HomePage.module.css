@@ -19,3 +19,14 @@
   justify-content: center;
   gap: 32px;
 }
+
+.featureSection {
+  display: flex; 
+  gap: 32px; 
+  justify-content: space-between;
+  max-width: 1216px; 
+  margin: 0 auto; 
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+
