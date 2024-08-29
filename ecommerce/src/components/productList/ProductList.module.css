@@ -1,0 +1,9 @@
+.productListContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 1216px;
+    gap: 32px;
+    
+  }
+  
