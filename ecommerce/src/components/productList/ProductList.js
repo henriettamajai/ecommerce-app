@@ -1,6 +1,7 @@
 import React from 'react';
 import ProductCard from '../productCard/ProductCard';
 import styles from './ProductList.module.css';
+import Button from '../button/Button';
 
 const ProductList = ({ products }) => {
   return (
@@ -14,6 +15,7 @@ const ProductList = ({ products }) => {
           discountedPrice={product.discountedPrice}
         />
       ))}
+      <Button variant='ghost' size='large'>View All</Button>
     </div>
   );
 };

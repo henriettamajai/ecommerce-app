@@ -5,6 +5,7 @@ import Footer from '../../components/footer/Footer';
 import Carousel from '../../components/carousel/Carousel';
 import FeatureCard from '../../components/featureCard/FeatureCard';
 import ProductList from '../../components/productList/ProductList'; 
+import Cta from '../../components/ctaSection/Cta';
 import styles from './HomePage.module.css';
 
 const HomePage = () => {
@@ -44,6 +45,7 @@ const HomePage = () => {
                 <h2 className={styles.sectionTitle}>Featured Products</h2>
                 <ProductList products={products} />
             </section>
+            <Cta />
             <Footer />
         </div>
     );
