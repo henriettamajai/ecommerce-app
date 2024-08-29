@@ -4,23 +4,18 @@
 }
 .categorySection {
   text-align: center;
-  padding: 32px 112px;
+  padding-top: 64px;
+  padding-bottom: 64px;
 }
 
 .sectionTitle {
   font-size: 32px;
   font-weight: 600;
   margin-bottom: 32px;
-  color: var(--neutral-800);
+  color: var(--neutral-900);
 }
 
-.cardRow {
-  display: flex;
-  justify-content: center;
-  gap: 32px;
-}
-
-.featureSection {
+.featureSection, .cardRow {
   display: flex; 
   gap: 32px; 
   justify-content: space-between;
@@ -29,4 +24,3 @@
   padding-top: 32px;
   padding-bottom: 32px;
 }
-

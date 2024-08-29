@@ -1,13 +1,15 @@
 import React from 'react';
 import styles from './CategoryCard.module.css';
-import Button from '../button/Button';
 
 const CategoryCard = ({ title, backgroundImage }) => {
   return (
-    <div className={styles.card} style={{ backgroundImage: `url(${backgroundImage})` }}>
-      <div className={styles.content}>
+    <div className={styles.cardContainer}>
+      <div 
+        className={styles.cardImage} 
+        style={{ backgroundImage: `url(${backgroundImage})` }}
+      ></div>
+      <div className={styles.cardContent}>
         <h2 className={styles.title}>{title}</h2>
-        <Button variant="link" size="medium" className={styles.button}>Shop Now</Button>
       </div>
     </div>
   );
