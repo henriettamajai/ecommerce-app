@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/home/HomePage';
 import LoginPage from './pages/login/LoginPage';
 import SignUpPage from './pages/signup/SignUpPage'
+import ProductsPage from './pages/products/ProductsPage';
 import './styles/global.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -15,6 +16,7 @@ const App = () => {
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignUpPage/>}/>
+        <Route path="/products" element={<ProductsPage/>}/>
       </Routes>
     </Router>
   );

@@ -1,0 +1,8 @@
+.productListContainer {
+    display: flex;
+    gap: 16px; 
+    align-items: flex-start;
+    margin: 0 auto;
+    max-width: 1216px; 
+  }
+  

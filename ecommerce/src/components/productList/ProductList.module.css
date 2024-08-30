@@ -1,9 +1,22 @@
+.productListWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 64px;
+}
+
 .productListContainer {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: flex-start; 
     max-width: 1216px;
     gap: 32px;
     
   }
-  
+  .buttonContainer {
+    margin-top: 32px;
+    display: flex;
+    justify-content: center; 
+    width: 100%;
+    
+  }
