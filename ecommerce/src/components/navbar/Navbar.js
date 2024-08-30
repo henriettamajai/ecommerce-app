@@ -16,9 +16,9 @@ const Navbar = () => {
         <img src="/logo.svg" alt="Logo" />
       </div>
       <ul className={styles.menu}>
-        <li><Button variant="link" size="medium">Home</Button></li>
+        <li><Button variant="link" size="medium" onClick={() => handleNavigate('/')}>Home</Button></li>
         <li><Button variant="link" size="medium">Shop</Button></li>
-        <li><Button variant="link" size="medium">Products</Button></li>
+        <li><Button variant="link" size="medium" onClick={() => handleNavigate('/products')}>Products</Button></li>
       </ul>
       <div className={styles.icons}>
         <div className={styles.icon}>
