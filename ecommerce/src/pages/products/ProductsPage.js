@@ -23,7 +23,7 @@ const ProductsPage = () => {
             <Banner />
             <div className={styles.productListContainer}>
                 <Filter />
-                <ProductList products={products} />
+                <ProductList products={products} showButton={false} />
             </div>
             <Footer />
             

@@ -1,20 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ProductCard from '../productCard/ProductCard';
+import Pagination from '../pagination/Pagination'; 
 import styles from './ProductList.module.css';
 import Button from '../button/Button';
 
-const ProductList = ({ products }) => {
+const ProductList = ({ products, showButton = true, showPagination = true }) => {
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 12; 
+  const totalPages = Math.ceil(products.length / itemsPerPage);
+
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate('/products'); 
+    navigate('/products');
   };
+
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+  };
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const currentProducts = products.slice(startIndex, startIndex + itemsPerPage);
 
   return (
     <div className={styles.productListWrapper}>
       <div className={styles.productListContainer}>
-        {products.map((product, index) => (
+        {currentProducts.map((product, index) => (
           <ProductCard
             key={index}
             image={product.image}
@@ -24,9 +35,18 @@ const ProductList = ({ products }) => {
           />
         ))}
       </div>
-      <div className={styles.buttonContainer}>
-        <Button variant='ghost' size='large' onClick={handleClick}>View All</Button>
-      </div>
+      {showButton && (
+        <div className={styles.buttonContainer}>
+          <Button variant='ghost' size='large' onClick={handleClick}>View All</Button>
+        </div>
+      )}
+      {showPagination && (
+        <Pagination 
+          totalPages={totalPages} 
+          currentPage={currentPage} 
+          onPageChange={handlePageChange} 
+        />
+      )}
     </div>
   );
 };

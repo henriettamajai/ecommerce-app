@@ -43,7 +43,7 @@ const HomePage = () => {
             </section>
             <section className={styles.productSection}>
                 <h2 className={styles.sectionTitle}>Featured Products</h2>
-                <ProductList products={products} />
+                <ProductList products={products} showPagination={false} />
             </section>
             <Cta />
             <Footer />

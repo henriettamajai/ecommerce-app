@@ -1,0 +1,31 @@
+.paginationContainer {
+    display: flex;
+    gap: 8px; 
+    justify-content: center; 
+    margin-top: 32px; 
+  }
+
+  .pageNumber {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background-color: var(--white); 
+    color: var(--neutral-900); 
+    border: none;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  
+  .pageNumber:hover {
+    background-color: var(--primary-700); 
+    color: var(--white);
+  }
+  
+  .active {
+    background-color: var(--primary-600); 
+    color: var(--white);
+  }
+  

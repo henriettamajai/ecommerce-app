@@ -44,7 +44,8 @@
 }
 
 .price {
-    font-size: 18px;
+    font-size: 16px;
+    font-weight: 500;
     color: var(--neutral-900); 
 }
 
@@ -57,6 +58,7 @@
 
 .originalPrice {
     font-size: 16px;
+    font-weight: 500;
     color: var(--neutral-500); 
     text-decoration: line-through;
 }
