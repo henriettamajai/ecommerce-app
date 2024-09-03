@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import ProductCard from '../productCard/ProductCard';
 import Pagination from '../pagination/Pagination'; 
 import styles from './ProductList.module.css';
@@ -7,18 +6,13 @@ import Button from '../button/Button';
 
 const ProductList = ({ products, showButton = true, showPagination = true }) => {
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 12; 
+  const itemsPerPage = 12;
   const totalPages = Math.ceil(products.length / itemsPerPage);
-
-  const navigate = useNavigate();
-
-  const handleClick = () => {
-    navigate('/products');
-  };
 
   const handlePageChange = (page) => {
     setCurrentPage(page);
   };
+
   const startIndex = (currentPage - 1) * itemsPerPage;
   const currentProducts = products.slice(startIndex, startIndex + itemsPerPage);
 
@@ -37,7 +31,7 @@ const ProductList = ({ products, showButton = true, showPagination = true }) => 
       </div>
       {showButton && (
         <div className={styles.buttonContainer}>
-          <Button variant='ghost' size='large' onClick={handleClick}>View All</Button>
+          <Button variant='ghost' size='large'>View All</Button>
         </div>
       )}
       {showPagination && (

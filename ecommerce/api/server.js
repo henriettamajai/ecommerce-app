@@ -17,7 +17,7 @@ const swaggerOptions = {
     info: {
       title: 'User API',
       version: '1.0.0',
-      description: 'API for user registration and authentication',
+      description: 'API for user registration, authentication, and product retrieval',
     },
     servers: [
       {
@@ -30,6 +30,61 @@ const swaggerOptions = {
 
 const swaggerDocs = swaggerJsDoc(swaggerOptions);
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
+
+// Example product data
+const products = [
+    { image: "/product.jpg", title: "Product 1", price: 120, discountedPrice: 100 },
+    { image: "/product.jpg", title: "Product 2", price: 200 },
+    { image: "/product.jpg", title: "Product 3", price: 150, discountedPrice: 130 },
+    { image: "/product.jpg", title: "Product 4", price: 180 },
+    { image: "/product.jpg", title: "Product 5", price: 300, discountedPrice: 250 },
+    { image: "/product.jpg", title: "Product 6", price: 350 },
+    { image: "/product.jpg", title: "Product 7", price: 350 },
+    { image: "/product.jpg", title: "Product 8", price: 350 }
+];
+
+/**
+ * @swagger
+ * components:
+ *   schemas:
+ *     Product:
+ *       type: object
+ *       properties:
+ *         image:
+ *           type: string
+ *           description: URL of the product image
+ *         title:
+ *           type: string
+ *           description: Title of the product
+ *         price:
+ *           type: number
+ *           format: float
+ *           description: Price of the product
+ *         discountedPrice:
+ *           type: number
+ *           format: float
+ *           description: Discounted price of the product, if applicable
+ */
+
+/**
+ * @swagger
+ * /products:
+ *   get:
+ *     summary: Retrieve a list of products
+ *     tags: [Product]
+ *     responses:
+ *       200:
+ *         description: A list of products
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 $ref: '#/components/schemas/Product'
+ */
+app.get('/products', (req, res) => {
+    res.status(200).json(products);
+});
 
 /**
  * @swagger
@@ -155,7 +210,6 @@ app.post('/login', (req, res) => {
     return res.status(401).json({ message: 'Invalid email or password' });
   }
 });
-
 
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
