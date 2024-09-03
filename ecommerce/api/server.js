@@ -1,6 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const swaggerUi = require('swagger-ui-express');
+const swaggerJsDoc = require('swagger-jsdoc');
 
 const app = express();
 const port = 5000;
@@ -8,16 +10,14 @@ const port = 5000;
 app.use(cors()); 
 app.use(bodyParser.json()); 
 
-const swaggerUi = require('swagger-ui-express');
-const swaggerJsDoc = require('swagger-jsdoc');
-
+// Swagger setup
 const swaggerOptions = {
   swaggerDefinition: {
     openapi: '3.0.0',
     info: {
-      title: 'Registration API',
+      title: 'User API',
       version: '1.0.0',
-      description: 'API for user registration',
+      description: 'API for user registration and authentication',
     },
     servers: [
       {
@@ -25,7 +25,7 @@ const swaggerOptions = {
       },
     ],
   },
-  apis: ['./server.js'], // Path to API docs
+  apis: ['./server.js'],
 };
 
 const swaggerDocs = swaggerJsDoc(swaggerOptions);
@@ -83,7 +83,6 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 app.post('/signup', (req, res) => {
   const { firstName, lastName, email, password, confirmPassword } = req.body;
 
-  // Basic validation
   if (!firstName || !lastName || !email || !password || !confirmPassword) {
     return res.status(400).json({ message: 'All fields are required' });
   }
@@ -92,7 +91,6 @@ app.post('/signup', (req, res) => {
     return res.status(400).json({ message: 'Passwords do not match' });
   }
 
- 
   const passwordRegex = /^(?=.*[0-9])(?=.*[!@#$%^&*(),.?":{}|<>]).{6,}$/;
   if (!passwordRegex.test(password)) {
     return res.status(400).json({ 
@@ -104,6 +102,60 @@ app.post('/signup', (req, res) => {
 
   res.status(201).json({ message: 'User registered successfully' });
 });
+
+/**
+ * @swagger
+ * components:
+ *   schemas:
+ *     Login:
+ *       type: object
+ *       required:
+ *         - email
+ *         - password
+ *       properties:
+ *         email:
+ *           type: string
+ *           format: email
+ *           description: Email of the user
+ *         password:
+ *           type: string
+ *           description: User password
+ */
+
+/**
+ * @swagger
+ * /login:
+ *   post:
+ *     summary: Authenticate a user
+ *     tags: [User]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             $ref: '#/components/schemas/Login'
+ *     responses:
+ *       200:
+ *         description: Login successful
+ *       400:
+ *         description: Missing fields or invalid credentials
+ *       401:
+ *         description: Unauthorized
+ */
+app.post('/login', (req, res) => {
+  const { email, password } = req.body;
+
+  if (!email || !password) {
+    return res.status(400).json({ message: 'Email and password are required' });
+  }
+
+  if (email === 'user@example.com' && password === 'password123!') {
+    return res.status(200).json({ message: 'Login successful' });
+  } else {
+    return res.status(401).json({ message: 'Invalid email or password' });
+  }
+});
+
 
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
