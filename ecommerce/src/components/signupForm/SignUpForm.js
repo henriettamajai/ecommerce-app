@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Button from '../button/Button';
 import styles from './SignUpForm.module.css';
 
-const SignUpForm = () => {
+const SignUpForm = ({ onSubmit }) => {
     const [formData, setFormData] = useState({
         firstName: '',
         lastName: '',
@@ -12,22 +12,50 @@ const SignUpForm = () => {
         confirmPassword: '',
     });
 
+    const [errorMessage, setErrorMessage] = useState('');
+
+    const navigate = useNavigate();
+
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         setFormData((prevData) => ({
             ...prevData,
             [name]: value,
         }));
+        setErrorMessage(''); 
     };
 
-    const navigate = useNavigate();
     const handleLoginClick = () => {
-        navigate('/login'); 
+        navigate('/login');
+    };
+
+    const validateForm = () => {
+        const { firstName, lastName, email, password, confirmPassword } = formData;
+
+        if (!firstName || !lastName || !email || !password || !confirmPassword) {
+            return 'Please fill out all fields.';
+        }
+        if (password !== confirmPassword) {
+            return 'Passwords do not match.';
+        }
+        const passwordRegex = /^(?=.*[0-9])(?=.*[!@#$%^&*(),.?":{}|<>]).{6,}$/;
+        if (!passwordRegex.test(password)) {
+            return 'Password must contain at least 6 characters and at least one number and one special character.';
+        }
+        return null;
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log('Form data submitted:', formData);
+        setErrorMessage('');
+
+        const validationError = validateForm();
+        if (validationError) {
+            setErrorMessage(validationError);
+            return;
+        }
+
+        onSubmit(formData);
     };
 
     return (
@@ -58,6 +86,7 @@ const SignUpForm = () => {
                     />
                 </div>
             </div>
+
             <div className={styles.inputWrapper}>
                 <label htmlFor="email" className={styles.label}>Email*</label>
                 <input
@@ -70,6 +99,7 @@ const SignUpForm = () => {
                     onChange={handleInputChange}
                 />
             </div>
+
             <div className={styles.inputWrapper}>
                 <label htmlFor="password" className={styles.label}>Password*</label>
                 <input
@@ -82,6 +112,7 @@ const SignUpForm = () => {
                     onChange={handleInputChange}
                 />
             </div>
+
             <div className={styles.inputWrapper}>
                 <label htmlFor="confirmPassword" className={styles.label}>Confirm password*</label>
                 <input
@@ -94,13 +125,18 @@ const SignUpForm = () => {
                     onChange={handleInputChange}
                 />
             </div>
+
+            {errorMessage && <p className={styles.error}>{errorMessage}</p>}
+
             <Button size="medium" variant="filled" type="submit" className={styles.buttonFullWidth}>
                 Sign Up
             </Button>
+
             <button type="button" className={`${styles.googleIcon} ${styles.buttonFullWidth}`}>
                 <img src="/googleIcon.svg" alt="Google Icon" className={styles.googleButton}/>
                 <span>Sign Up with Google</span>
             </button>
+
             <div className={styles.loginLink}>
                 <span>Already have an account?</span>
                 <Button size='extraSmall'variant='link' state='active' onClick={handleLoginClick}>Log In</Button>
