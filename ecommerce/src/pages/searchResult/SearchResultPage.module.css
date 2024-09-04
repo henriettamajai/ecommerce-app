@@ -29,5 +29,14 @@
     height: auto;
     margin-right: 20px;
   }
+
+  .noRes {
+    font-size: 18px;
+    color: var(--neutral-900);
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 64px;
+  }
+  
   
   

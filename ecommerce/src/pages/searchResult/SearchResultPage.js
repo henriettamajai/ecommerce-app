@@ -3,6 +3,7 @@ import axios from 'axios';
 import styles from './SearchResultPage.module.css';
 import Navbar from '../../components/navbar/Navbar';
 import Banner from '../../components/banner/Banner';
+import Footer from '../../components/footer/Footer';
 import ProductCard from '../../components/productCard/ProductCard'; 
 import Pagination from '../../components/pagination/Pagination'; 
 
@@ -73,8 +74,9 @@ const SearchResultPage = () => {
           )}
         </div>
       ) : (
-        <p>No results found.</p>
+        <p className={styles.noRes}>No results found.</p>
       )}
+      <Footer />
     </div>
   );
 };
