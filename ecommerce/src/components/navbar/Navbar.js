@@ -6,6 +6,7 @@ import Button from '../button/Button';
 const Navbar = () => {
   const navigate = useNavigate();
   const [isSearchVisible, setIsSearchVisible] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
 
   const handleNavigate = (path) => {
     navigate(path); 
@@ -13,6 +14,13 @@ const Navbar = () => {
 
   const toggleSearch = () => {
     setIsSearchVisible(!isSearchVisible);
+  };
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      navigate(`/search?query=${encodeURIComponent(searchQuery.trim())}`);
+    }
   };
 
   return (
@@ -30,8 +38,16 @@ const Navbar = () => {
           <img src="/search-icon.svg" alt="Search" />
         </div>
         {isSearchVisible && (
-          <input type="text" className={styles.searchInput} placeholder="Search..." />
-          )}
+          <form onSubmit={handleSearch} className={styles.searchForm}>
+            <input
+              type="text"
+              className={styles.searchInput}
+              placeholder="Search..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
+          </form>
+        )}
         <div className={styles.icon} onClick={() => handleNavigate('/login')} style={{ cursor: 'pointer' }}>
           <img src="/user-icon.svg" alt="Account" />
         </div>

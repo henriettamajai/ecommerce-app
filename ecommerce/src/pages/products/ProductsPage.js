@@ -41,7 +41,7 @@ const ProductsPage = () => {
   return (
     <div>
       <Navbar />
-      <Banner />
+      <Banner title="Products" />
       <div className={styles.productListContainer}>
         <Filter />
         <ProductList products={products} showButton={false} />

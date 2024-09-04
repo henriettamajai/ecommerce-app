@@ -1,0 +1,33 @@
+.productListContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px; 
+    align-items: flex-start;
+    margin: 0 auto;
+    max-width: 1216px; 
+  }
+  
+  .buttonContainer {
+    text-align: center;
+    margin: 20px 0;
+  }
+  
+  .resultsList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .resultItem {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .productImage {
+    width: 100px; 
+    height: auto;
+    margin-right: 20px;
+  }
+  
+  

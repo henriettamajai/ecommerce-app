@@ -211,7 +211,19 @@ app.post('/login', (req, res) => {
   }
 });
 
+app.get('/search', (req, res) => {
+  const { query } = req.query;
+  if (!query) {
+    return res.status(400).json({ message: 'Query parameter is required' });
+  }
+
+  const results = products.filter(product => product.title.toLowerCase().includes(query.toLowerCase()));
+
+  res.status(200).json(results);
+});
+
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
   console.log(`Swagger docs available at http://localhost:${port}/api-docs`);
 });
+
