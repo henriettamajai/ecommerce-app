@@ -41,6 +41,10 @@
     width: 100%;
     height: 100%;
   }
+  .icon:hover {
+    cursor: pointer;
+    color: var(--primary-200)
+  }
   
   .iconWithCounter {
     position: relative;
@@ -60,4 +64,20 @@
     justify-content: center;
     font-size: 12px;
   }
-  
+  .searchInput {
+    font-family: 'Poppins', sans-serif;
+    position: absolute;
+    top: 16px;
+    right: 240px; 
+    font-size: 16px;
+    border: 1px solid var(--neutral-300);
+    border-radius: 40px;
+    padding: 8px 14px;
+    font-size: 16px;
+    box-sizing: border-box;
+  }
+
+  .searchInput:focus {
+    border: 2px solid var(--primary-200);
+    outline: none;
+}
